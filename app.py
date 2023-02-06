@@ -25,6 +25,9 @@ Atla(name='Zuko', nation='Fire', is_bender=True).save()
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+  return "ATLA character database. Do /character to see all characters and /character/<id> for a specific character."
 @app.route('/character/', methods=['GET', 'POST'])    
 @app.route('/character/<id>', methods=['GET', 'PUT', 'DELETE'])    
 
